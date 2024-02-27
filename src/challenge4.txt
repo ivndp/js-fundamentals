@@ -1,0 +1,61 @@
+#### Requirements
+In a markdown or text file called `challenge4.md` or `challenge4.txt`, write an explanation of
+- what `First Class` functions are
+if the functions are treated like other variables. The functions can be assigned to any other variable or passed as an argument or can be returned by another function.
+
+- how this concept applies in JS.
+assigning to variable:
+function addTwo(i) {
+    return i + 2;
+}
+
+// assign the function to a variable
+const plusTwo = addTwo;
+
+// use the variable to call the function
+const result = plusTwo(5);
+
+passing as argument:
+function calculation(a, b, operation) {
+    return operation(a, b);
+}
+
+// defined different operation functions
+function add(a, b) {
+    return a + b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+//call calculation with different functions as argument
+calculation(2, 4, add);
+calculation(3, 5, multiply);
+
+returning from functions:
+function multiplier(factor) {
+    return function(x) {
+        return x * factor;
+    };
+}
+
+const double = multiplier(2);
+console.log(double(5));
+
+
+- what the difference is between declaring a function and calling it
+
+declaring a function is writing or composing a function that could be called later to let it process, is a creation
+it would not give you any feedback 
+e.g.
+function hello() {
+    return "Hello World!"
+}
+
+calling it is to let it process, is an operation
+calling a function will give you a feedback if the function have been declared
+e.g.
+hello()
+
+- Bonus: give examples for each explanation
